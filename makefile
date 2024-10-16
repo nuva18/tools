@@ -41,7 +41,7 @@ bin/dec: dec.c
 bin/gituser: sh/gituser.sh
 	cp sh/gituser.sh bin/gituser ; chmod 0700 bin/gituser
 
-bin/haiku: haiku/haiku.cpp
+bin/haiku: haiku/haiku.cpp haiku/haiku_bits.hpp
 	g++ $(FLAGS) -o bin/haiku haiku/haiku.cpp
 
 bin/hex: hex.c
@@ -50,7 +50,7 @@ bin/hex: hex.c
 bin/junknames: junknames.cpp
 	g++ $(FLAGS) -o bin/junknames junknames.cpp
 
-bin/randnames: randnames/randnames.cpp
+bin/randnames: randnames/randnames.cpp randnames/names.hpp
 	g++ $(FLAGS) -o bin/randnames randnames/randnames.cpp
 
 bin/randomize: randomize.cpp
