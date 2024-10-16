@@ -9,6 +9,7 @@ all: bin/2char \
      bin/gituser \
      bin/haiku \
      bin/hex \
+     bin/junknames \
      bin/randnames \
      bin/randomize \
      bin/roll \
@@ -45,6 +46,9 @@ bin/haiku: haiku/haiku.cpp
 
 bin/hex: hex.c
 	gcc $(FLAGS) -o bin/hex hex.c
+
+bin/junknames: junknames.cpp
+	g++ $(FLAGS) -o bin/junknames junknames.cpp
 
 bin/randnames: randnames/randnames.cpp
 	g++ $(FLAGS) -o bin/randnames randnames/randnames.cpp
