@@ -1,6 +1,7 @@
 FLAGS = -Wall -Wextra
 
 all: bin/2char \
+     bin/bytes \
      bin/calc \
      bin/char2 \
      bin/cmuck \
@@ -20,6 +21,9 @@ clean:
 
 bin/2char: 2char.c
 	gcc $(FLAGS) -o bin/2char 2char.c
+
+bin/bytes: bytes.c
+	gcc $(FLAGS) -o bin/bytes bytes.c
 
 bin/calc: sh/calc.sh
 	cp sh/calc.sh bin/calc ; chmod 0700 bin/calc
