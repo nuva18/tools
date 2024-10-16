@@ -1,5 +1,5 @@
 FLAGS = -Wall -Wextra
-
+#
 all: bin/2char \
      bin/bytes \
      bin/calc \
