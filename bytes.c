@@ -3,7 +3,7 @@
 #include <string.h>
 
 void usage(char *err) {
-    fprintf(stderr, "usage: bytes <no. bytes> [string seq.] [-n (print newline at the end)]\n");
+    fprintf(stderr, "usage: bytes <no. bytes> [string seq. (-0 for '\\0')] [-n (trailing newline)]\n");
     if (err == NULL) fprintf(stderr, "       Prints bytes.\n");
     else fprintf(stderr, "%s\n", err);
     
@@ -22,10 +22,11 @@ int main(int argc, char **argv) {
         if (sscanf(argv[1], "%d", &no_bytes) != 1) { usage("Can't parse no. bytes"); exit(1); }
     }
     seq = (argc >= 3);
+    print_null = (argc >= 3 && strcmp(argv[2], "-0") == 0);
     nl = (argc == 4 && strcmp(argv[3], "-n") == 0) ? 1 : 0;
     
+    
     /* Doin' it. */
-    print_null = (strcmp(argv[2], "-0") == 0);
     str = (seq && !print_null) ? argv[2] : "\0";
     str_len = (seq && !print_null) ? strlen(str) : 1;
     
