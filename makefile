@@ -1,5 +1,5 @@
 FLAGS = -Wall -Wextra
-#
+
 all: bin/2char \
      bin/bytes \
      bin/calc \
@@ -10,6 +10,7 @@ all: bin/2char \
      bin/haiku \
      bin/hex \
      bin/junknames \
+     bin/keyme \
      bin/randnames \
      bin/randomize \
      bin/roll \
@@ -27,19 +28,19 @@ bin/bytes: bytes.c
 	gcc $(FLAGS) -o bin/bytes bytes.c
 
 bin/calc: sh/calc.sh
-	cp sh/calc.sh bin/calc ; chmod 0700 bin/calc
+	cp sh/calc.sh bin/calc ; chmod +x bin/calc
 
 bin/char2: char2.c
 	gcc $(FLAGS) -o bin/char2 char2.c
 
 bin/cmuck: sh/cmuck.sh
-	cp sh/cmuck.sh bin/cmuck ; chmod 0700 bin/cmuck
+	cp sh/cmuck.sh bin/cmuck ; chmod +x bin/cmuck
 
 bin/dec: dec.c
 	gcc $(FLAGS) -o bin/dec dec.c
 
 bin/gituser: sh/gituser.sh
-	cp sh/gituser.sh bin/gituser ; chmod 0700 bin/gituser
+	cp sh/gituser.sh bin/gituser ; chmod +x bin/gituser
 
 bin/haiku: haiku/haiku.cpp haiku/haiku_bits.hpp
 	g++ $(FLAGS) -o bin/haiku haiku/haiku.cpp
@@ -49,6 +50,9 @@ bin/hex: hex.c
 
 bin/junknames: junknames.cpp
 	g++ $(FLAGS) -o bin/junknames junknames.cpp
+
+bin/keyme: sh/keyme.sh
+	cp sh/keyme.sh bin/keyme ; chmod +x bin/keyme
 
 bin/randnames: randnames/randnames.cpp randnames/names.hpp
 	g++ $(FLAGS) -o bin/randnames randnames/randnames.cpp
