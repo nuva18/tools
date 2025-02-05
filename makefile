@@ -15,6 +15,7 @@ all: bin/2char \
      bin/randomize \
      bin/roll \
      bin/sge \
+     bin/wakeup \
      bin/width \
      bin/zseq 
 
@@ -65,6 +66,9 @@ bin/roll: roll.cpp
 
 bin/sge: sge.c
 	gcc $(FLAGS) -o bin/sge sge.c
+
+bin/wakeup: wakeup.cpp
+	g++ $(FLAGS) -o bin/wakeup wakeup.cpp
 
 bin/width: width.cpp
 	g++ $(FLAGS) -o bin/width width.cpp
