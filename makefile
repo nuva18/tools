@@ -1,16 +1,19 @@
 FLAGS = -Wall -Wextra
 
-all: bin/2char \
+all: bin/80 \
+     bin/2char \
      bin/bytes \
      bin/calc \
      bin/char2 \
      bin/cmuck \
      bin/dec \
+     bin/fjson \
      bin/gituser \
      bin/haiku \
      bin/hex \
      bin/junknames \
      bin/keyme \
+     bin/lcat \
      bin/randnames \
      bin/randomize \
      bin/roll \
@@ -21,6 +24,9 @@ all: bin/2char \
 
 clean:
 	rm -f bin/* ; > bin/.keep
+
+bin/80: 80.cpp
+	g++ $(FLAGS) -o bin/80 80.cpp 
 
 bin/2char: 2char.c
 	gcc $(FLAGS) -o bin/2char 2char.c
@@ -40,6 +46,9 @@ bin/cmuck: sh/cmuck.sh
 bin/dec: dec.c
 	gcc $(FLAGS) -o bin/dec dec.c
 
+bin/fjson: fjson/fjson.cpp fjson/json.hpp
+	g++ $(FLAGS) -o bin/fjson fjson/fjson.cpp
+
 bin/gituser: sh/gituser.sh
 	cp sh/gituser.sh bin/gituser ; chmod +x bin/gituser
 
@@ -54,6 +63,9 @@ bin/junknames: junknames.cpp
 
 bin/keyme: sh/keyme.sh
 	cp sh/keyme.sh bin/keyme ; chmod +x bin/keyme
+
+bin/lcat: lcat.cpp 
+	g++ $(FLAGS) -o bin/lcat lcat.cpp
 
 bin/randnames: randnames/randnames.cpp randnames/names.hpp
 	g++ $(FLAGS) -o bin/randnames randnames/randnames.cpp
