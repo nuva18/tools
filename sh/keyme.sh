@@ -10,6 +10,5 @@ ssh-keygen -t ed25519 -b 4096 -f /home/$USER/.ssh/$1
 
 echo
 echo "Done. Here's your public key:"
-cat /home/$USER/.ssh/$1.pub
-echo
+cat $HOME/.ssh/$1.pub
 exit 0

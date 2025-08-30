@@ -11,6 +11,7 @@ all: bin/80 \
      bin/gituser \
      bin/haiku \
      bin/hex \
+     bin/jgr \
      bin/junknames \
      bin/keyme \
      bin/lcat \
@@ -57,6 +58,9 @@ bin/haiku: haiku/haiku.cpp haiku/haiku_bits.hpp
 
 bin/hex: hex.c
 	gcc $(FLAGS) -o bin/hex hex.c
+
+bin/jgr: sh/jgr.sh
+	cp sh/jgr.sh bin/jgr ; chmod +x bin/jgr
 
 bin/junknames: junknames.cpp
 	g++ $(FLAGS) -o bin/junknames junknames.cpp
