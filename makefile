@@ -15,7 +15,6 @@ all: bin/80 \
      bin/junknames \
      bin/keyme \
      bin/lcat \
-     bin/randnames \
      bin/randomize \
      bin/roll \
      bin/sge \
@@ -25,6 +24,8 @@ all: bin/80 \
 
 clean:
 	rm -f bin/* ; > bin/.keep
+
+randnames: bin/randnames
 
 bin/80: 80.cpp
 	g++ $(FLAGS) -o bin/80 80.cpp 
